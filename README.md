@@ -1,7 +1,8 @@
 <p align="center">
   <img src="https://github.com/bensinjin/weirdfruit-rn-demo/blob/master/weird_fruit.png">
 </p>
-## Weird Fruit - An introduction to React Native gestures: swipe, double tap and hold
+
+## An introduction to React Native gestures: swipe, double tap and hold
 
 ### Requirements:
 
