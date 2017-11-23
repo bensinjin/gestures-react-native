@@ -1,3 +1,4 @@
+![fruity](https://github.com/bensinjin/weirdfruit-rn-demo/weird_fruit.png)
 ## Weird Fruit - An introduction to React Native gestures: swipe, double tap and hold
 
 ### Requirements:
