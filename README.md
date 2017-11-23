@@ -6,8 +6,8 @@
 
 ### Requirements:
 
- - Nodejs & Watchman (possibly optional) https://docs.expo.io/versions/latest/introduction/installation.html#nodejs
- - Expo (desktop & mobile tools) https://docs.expo.io/versions/latest/introduction/installation.html
+ - Nodejs & Watchman (for development) https://docs.expo.io/versions/latest/introduction/installation.html#nodejs
+ - Expo (for development or just to view) https://docs.expo.io/versions/latest/introduction/installation.html
 
 ### Go!
 
