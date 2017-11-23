@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, PanResponder } from 'react-native';
+import { Alert, AppRegistry, Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View, Image, PanResponder } from 'react-native';
 
 export default class App extends React.Component {
   // The component class constructor.
@@ -9,10 +9,10 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentZoom: settings.defaultZoom
+      currentZoom: settings.defaultZoom,
+      imageUri: settings.imageUri1
     };
     this.lastTapTimeStamp = this._getTs();
-    this.pic = { uri: settings.imageUri };
   }
   // This method is invoked only once, before rendering occurs for the first time.
   // At this point, there is still no native UI rendered for this element.
@@ -55,17 +55,26 @@ export default class App extends React.Component {
 
   // The render method must return a React Element (JSX) to render (or null, to render nothing).
   render() {
-    let imgStyle = {width: this.state.currentZoom, height: this.state.currentZoom};
+    let imgStyle = {width: this.state.currentZoom, height: this.state.currentZoom},
+        img = {uri: this.state.imageUri};
     // This is our View component.  React will keep track of changes to state
     // variables and update the view accordingly.
     return (
       // Here we're pass properties to the View component just as our constructor recieve props.
       // The spread operator (...) expands the panHandlers object which houses our callback definitions.
       <View style={styles.container} {...this._panResponder.panHandlers}>
-        <Image source={this.pic} style={imgStyle}/>
-        <Text>Zoom level: {this.state.currentZoom}</Text>
-        <Text>Drag left or right to zoom.</Text>
-        <Text>Double tap to reset zoom.</Text>
+        <Text style={styles.titleText}>
+          Weird Fruit
+        </Text>
+        <Image source={img} style={imgStyle}/>
+        <Text style={styles.text}>
+          Zoom level: {this.state.currentZoom}{'\n'}
+          Drag left or right to zoom.{'\n'}
+          Double tap to reset zoom.{'\n'}
+        </Text>
+        <Text style={styles.nextText} onLongPress={() => {this._nextPicture()}}>
+          **Hold here for next image**
+        </Text>
       </View>
     );
   }
@@ -77,22 +86,36 @@ export default class App extends React.Component {
 
   // Increase our currentZoom state variable.
   _zoomIn() {
-    this.setState(previousState => {
-      return { currentZoom: previousState.currentZoom - settings.zoomIncr };
-    });
+    if (this.state.currentZoom <= settings.maxZoom) {
+      this.setState(previousState => {
+        return { currentZoom: previousState.currentZoom + settings.zoomIncr };
+      });
+    }
   }
 
   // Decrease our currentZoom state variable.
   _zoomOut() {
-    this.setState(previousState => {
-      return { currentZoom: previousState.currentZoom + settings.zoomIncr };
-    });
+    if (this.state.currentZoom >= settings.minZoom) {
+      this.setState(previousState => {
+        return { currentZoom: previousState.currentZoom - settings.zoomIncr };
+      });
+    }
   }
 
   // Reset to our settings.defaultZoom value.
   _zoomReset() {
     this.setState(previousState => {
       return { currentZoom: settings.defaultZoom }
+    });
+  }
+
+  // Select the next image.
+  _nextPicture() {
+    this.setState(previousState => {
+      let uri = previousState.imageUri == settings.imageUri1 ? settings.imageUri2 : settings.imageUri1;
+      return {
+        imageUri: uri
+      }
     });
   }
 }
@@ -104,13 +127,27 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  titleText: {
+    fontSize: 35,
+    fontWeight: 'bold',
+  },
+  text: {
+    fontSize: 15,
+  },
+  nextText: {
+    fontSize: 20,
+    fontWeight: 'bold',
   }
 });
 
 // Some default settings.
 const settings = {
   zoomIncr : 5,
-  defaultZoom: 100,
+  defaultZoom: 200,
+  maxZoom: 495,
+  minZoom: 5,
   tapMillis: 500,
-  imageUri: "https://moduscreate.com/wp-content/uploads/2015/07/ReactNativelogo.png"
+  imageUri1: "http://wdy.h-cdn.co/assets/cm/15/09/768x516/54ebb801e0bf8_-_6-kiwano-xl.jpg",
+  imageUri2: "https://i.pinimg.com/736x/65/25/c9/6525c9b73eeb9527a8eb326e4e4fbe3b--weird-fruit-strange-fruit.jpg"
 }

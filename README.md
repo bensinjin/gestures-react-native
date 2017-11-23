@@ -22,3 +22,5 @@ https://facebook.github.io/react-native/docs/state.html
 
 
 Resources: https://facebook.github.io/react-native/, http://www.reactnativeexpress.com/
+
+Ejecting from CRNA: https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md#react-native-link
