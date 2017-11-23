@@ -34,11 +34,14 @@ export default class App extends React.Component {
       },
       // Callback for release events.
       onPanResponderRelease: (evt, gestureState) => {
-        // This is pretty shit but work for demo purposes.
-        // I might propose not implement your own "double tap"
-        // but opting to use a library instead, many exist.
+        // This double tap implementation isn't great but will work for demo purposes.
+        // Libraries exist for gestures that, outside a demo environment, I'd probably adopt.
         //
-        // If we have no velocity along the x or y axis (we don't want the app to accept a swipe as a tap).
+        // TODO Make this better see https://facebook.github.io/react-native/docs/panresponder.html for docs on PanResponder.
+        // If we have no velocity along the x or y axis register this as a tap.
+        // We don't want the app to accept a swipe as a tap although technically this is
+        // fired on release so it's not entirely clear how velocity is determined
+        // (although I have observed it on release of swipes).
         if (gestureState.vx == 0 && gestureState.vy == 0) {
           // Set the current timestamp in ms.
           let currentTS = this._getTs();
