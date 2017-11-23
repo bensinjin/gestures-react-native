@@ -28,30 +28,21 @@ export default class App extends React.Component {
     };
     this.lastTapTimeStamp = this._getTs();
     this.pic = { uri: settings.imageUri };
-    console.log("in construct");
   }
 
   componentWillMount() {
+    // This is how we monitor swipes & taps.
     this._panResponder = PanResponder.create({
       // Ask to be the responder:
       onStartShouldSetPanResponder: (evt, gestureState) => true,
-      onStartShouldSetPanResponderCapture: (evt, gestureState) => true,
-      onMoveShouldSetPanResponder: (evt, gestureState) => true,
-      onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
-      onShouldBlockNativeResponder: (evt, gestureState) => true,
-
       onPanResponderMove: (evt, gestureState) => {
         // A swipe from left to right.
         if (gestureState.dx > 0) {
-          this.setState(previousState => {
-            return { currentZoom: previousState.currentZoom + settings.zoomIncr };
-          });
+          this._zoomIn();
         }
         // A swipe from right to left.
         else {
-          this.setState(previousState => {
-            return { currentZoom: previousState.currentZoom - settings.zoomIncr };
-          });
+          this._zoomOut();
         }
       },
       onPanResponderRelease: (evt, gestureState) => {
@@ -66,9 +57,7 @@ export default class App extends React.Component {
           // With default settings we're basically saying a double tap is two
           // taps with less than or equal to 750ms between them.
           if (currentTS - this.lastTapTimeStamp <= settings.tapMillis) {
-            this.setState(previousState => {
-              return { currentZoom: settings.defaultZoom }
-            });
+            this._zoomReset();
           }
           this.lastTapTimeStamp = currentTS;
         }
@@ -90,5 +79,23 @@ export default class App extends React.Component {
 
   _getTs() {
     return new Date().getTime();
+  }
+
+  _zoomIn() {
+    this.setState(previousState => {
+      return { currentZoom: previousState.currentZoom - settings.zoomIncr };
+    });
+  }
+
+  _zoomOut() {
+    this.setState(previousState => {
+      return { currentZoom: previousState.currentZoom + settings.zoomIncr };
+    });
+  }
+
+  _zoomReset() {
+    this.setState(previousState => {
+      return { currentZoom: settings.defaultZoom }
+    });
   }
 }
