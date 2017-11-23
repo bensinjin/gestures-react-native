@@ -31,6 +31,7 @@ https://facebook.github.io/react-native/docs/state.html
 
 
 ### Resource:
+ - ReactJS: https://reactjs.org/
  - React Native docs: https://facebook.github.io/react-native/, http://www.reactnativeexpress.com/
  - Note about environments and their differences: http://www.reactnativeexpress.com/environment
  - Ejecting from CRNA: https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md#react-native-link
