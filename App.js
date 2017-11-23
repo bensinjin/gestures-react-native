@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, AppRegistry, Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View, Image, PanResponder } from 'react-native';
+import { StyleSheet, Text, View, Image, PanResponder } from 'react-native';
 
 export default class App extends React.Component {
   // The component class constructor.

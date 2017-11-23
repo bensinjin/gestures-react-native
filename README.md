@@ -1,4 +1,4 @@
-## Weird Fruit - And introduction to React Native
+## Weird Fruit - An introduction to React Native gestures: swipe, double tap and hold
 
 1) Important note about environments and their differences: http://www.reactnativeexpress.com/environment. Basically you can build within the limitations of React Native's at times limited apis (good enough for this demo) or you can allow support for native code (Android/IOS) but that requires additional setup (AndroidStudio/Xcode). Projects can always be ported from native React Native projects to projects that support native development.
 
