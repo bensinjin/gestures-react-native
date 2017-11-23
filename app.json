@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "motions-and-gestures",
-    "description": "An empty new project",
-    "slug": "motions-and-gestures",
+    "name": "Weird Fruit",
+    "description": "An exciting way to view fruit...",
+    "slug": "weird-fruit",
     "privacy": "public",
     "sdkVersion": "23.0.0",
     "version": "1.0.0",

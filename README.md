@@ -1,26 +1,36 @@
 ## Weird Fruit - An introduction to React Native gestures: swipe, double tap and hold
 
-1) Important note about environments and their differences: http://www.reactnativeexpress.com/environment. Basically you can build within the limitations of React Native's at times limited apis (good enough for this demo) or you can allow support for native code (Android/IOS) but that requires additional setup (AndroidStudio/Xcode). Projects can always be ported from native React Native projects to projects that support native development.
+### Requirements:
 
-2) Install expo (desktop & mobile tools) https://docs.expo.io/versions/latest/introduction/installation.html
+ - Nodejs & Watchman (possibly optional) https://docs.expo.io/versions/latest/introduction/installation.html#nodejs
+ - Expo (desktop & mobile tools) https://docs.expo.io/versions/latest/introduction/installation.html
 
-3) Install Nodejs & Watchman https://docs.expo.io/versions/latest/introduction/installation.html#nodejs (Optional, required for development)
+### Go!
 
-4) React Native Concepts: Components, Props, State
+1) `git clone https://github.com/bensinjin/weirdfruit-rn-demo.git`
 
-### Components:
+2) `cd weirdfruit-rn-demo`
+
+3) `npm install`
+
+4) Open Expo -> Open weirdfruit-rn-demo
+
+5) Choose a device to run the app on. Scanning the "Share" QR code will open it on mobile devices with the Expo app installed (easiest). Alternatively, starting an emulator and choosing "Device" will start the app on the respective emulator currently running.
+
+### React Native Concepts: Components, Props, State
+
+#### Components:
 http://www.reactnativeexpress.com/components
 http://www.reactnativeexpress.com/component_api
 
-### Props:
+#### Props:
 https://facebook.github.io/react-native/docs/props.html
 
-### State:
+#### State:
 https://facebook.github.io/react-native/docs/state.html
 
-5) Clone and run demo optionally... Discuss.
 
-
-Resources: https://facebook.github.io/react-native/, http://www.reactnativeexpress.com/
-
-Ejecting from CRNA: https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md#react-native-link
+### Resource:
+ - React Native docs: https://facebook.github.io/react-native/, http://www.reactnativeexpress.com/
+ - Note about environments and their differences: http://www.reactnativeexpress.com/environment
+ - Ejecting from CRNA: https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md#react-native-link
