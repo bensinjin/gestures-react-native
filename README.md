@@ -34,7 +34,8 @@ https://facebook.github.io/react-native/docs/props.html
 https://facebook.github.io/react-native/docs/state.html
 
 
-### Resource:
+### Resources:
+ - Good read on what RN is and how it compares to other cross platfrom tools:https://www.infoq.com/articles/react-native-introduction 
  - ReactJS: https://reactjs.org/
  - React Native docs: https://facebook.github.io/react-native/, http://www.reactnativeexpress.com/
  - Note about environments and their differences: http://www.reactnativeexpress.com/environment
