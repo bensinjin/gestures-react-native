@@ -35,8 +35,9 @@ https://facebook.github.io/react-native/docs/state.html
 
 
 ### Resources:
- - Good read on what RN is and how it compares to other cross platfrom tools:https://www.infoq.com/articles/react-native-introduction 
+ - Good read on what RN is and how it compares to other cross platform tools:https://www.infoq.com/articles/react-native-introduction 
  - ReactJS: https://reactjs.org/
  - React Native docs: https://facebook.github.io/react-native/, http://www.reactnativeexpress.com/
- - Note about environments and their differences: http://www.reactnativeexpress.com/environment
- - Ejecting from CRNA: https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md#react-native-link
+ - Environments and their differences: http://www.reactnativeexpress.com/environment
+ - Environments and their differences (CRNA vs RNC): https://facebook.github.io/react-native/docs/getting-started.html
+ - Ejecting from CRNA: https://github.com/react-community/create-react-native-app#npm-run-eject
