@@ -11,13 +11,13 @@
 
 ### Go!
 
-1) `git clone https://github.com/bensinjin/weirdfruit-rn-demo.git`
+1) `git clone https://github.com/bensinjin/weirdfruit.git`
 
-2) `cd weirdfruit-rn-demo`
+2) `cd weirdfruit`
 
 3) `npm install`
 
-4) Open Expo -> Open weirdfruit-rn-demo
+4) Open Expo -> Open weirdfruit
 
 5) Choose a device to run the app on. Scanning the "Share" QR code will open it on mobile devices with the Expo app installed (easiest). Alternatively, starting an emulator and choosing "Device" will start the app on the respective emulator currently running.
 
